@@ -12,7 +12,7 @@ function Operation() {
     axios.get(`http://localhost:3001/operations/byId/${id}`).then((response) => {
       setOperationObject(response.data)
     })
-  }, [])
+  })
 
   
   return (

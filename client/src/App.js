@@ -10,13 +10,19 @@ function App() {
   return (
     <div className="App">
      <Router>
-      <Link to="/createpost"> Create A Post </Link>
-      <Link to="/"> Home Page </Link>
+      <div className="navbar">
+        <ul>
+          <li> <Link to="/createpost"> Create A Post </Link> </li>
+          <li> <Link to="/"> Home Page </Link> </li>
+        </ul>
+      </div>
+      <div className='routes'>
       <Routes>
         <Route path="/" exact element={ <Home /> } />
         <Route path="/createpost" exact element={ <CreatePost /> } />
         <Route path="/operation/:id" exact element={ <Operation /> } />
       </Routes>
+      </div>
      </Router>
     </div>
   );

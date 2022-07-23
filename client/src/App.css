@@ -1,41 +1,43 @@
 .App {
   text-align: center;
-}
-
-.post{
-  width: 400px;
-  height: 300px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
-  border: 1px, solid, lightgray;
-  font-family: Arial, Helvetica, sans-serif;
-
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 7px 29px 0px;
-}
-
-.post .title{
-  flex: 20%;
-  border-bottom: 1px solid lightgray;
-  background-color: dodgerblue;
-  display: grid;
-  place-content: center;
-  color: white;
-}
-
-.post .body{
-  flex: 60%;
-  display: grid;
-  place-content: center;
-}
-
-.post .footer{
-  flex: 20%;
-  border-top: 1px solid lightgray;
-  display: flex;
+  justify-content: center;
+  
   align-items: center;
-  padding-left: 15px;
-  background-color: dodgerblue;
-  color: white;
+  width: 100%;
+  
+  
 }
+.navbar{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+  .navbar ul{
+    display: flex;
+    width: 50%;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20px 0 20px;
+    overflow: hidden;
+    background-color: #333;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .navbar li a:hover {
+    background-color: #111;
+  }
+
+  /* .routes {
+
+  } */
