@@ -14,7 +14,6 @@ function Home() {
   }, [])
   var total = 0
   
-
   return (
     <div className="App">
       {listOfOperations.forEach((value, index) => {
@@ -25,7 +24,7 @@ function Home() {
       <div className='total'>
         <h1> Balance Total: {total} </h1>
       </div>
-      {/*                     index = key    */}
+      
       {listOfOperations.map((value, index) => {
         const fecha = new Date(value.dateOperation)
         
@@ -35,7 +34,7 @@ function Home() {
             className="operation" 
             onClick={ () => {navigate(`/operation/${value.id}`)}}
           >
-            <div className="dateOperation"> 
+            <div className="date"> 
               {fecha.getDay() < 10 ? '0' + fecha.getDay() : fecha.getDay()}/
               {fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1}/
               {fecha.getFullYear()}

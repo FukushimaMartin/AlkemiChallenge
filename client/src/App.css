@@ -38,6 +38,12 @@
     background-color: #111;
   }
 
-  /* .routes {
-
-  } */
+  .routes {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+    .routers{
+      display: flex;
+      width: 50%;
+    }

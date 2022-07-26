@@ -1,0 +1,77 @@
+.red {
+  color: red;
+}
+.green{
+  color: green;
+}
+
+.postOperation{
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 50vh;
+
+  margin-top: 15px;
+  padding: 2px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 5px #ccc;
+
+  background-color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+  .typeOperation{    
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .conceptContainerOperation{
+    display: flex;
+    flex-direction: row;
+    
+    height: 55%;
+    margin: 15px;
+  }
+    .conceptLabelOperation{
+      align-self: flex-start;
+      justify-content: flex-start;
+
+      width: 20%;
+    }
+    .conceptOperation{
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
+      
+      background-color: aliceblue;
+      margin-left: 5px;
+      padding-left: 5px;
+
+      width: 70%;
+      height: 100%;
+      
+      border: 1px solid #ddd;
+      background-color: rgb(245, 250, 255);
+    }
+    
+  .amountOperation{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .dateOperation{
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+
+    margin-top: 10px;
+    margin-right: 5px;
+
+    font-size: 11px;    
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+  }

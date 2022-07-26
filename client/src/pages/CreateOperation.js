@@ -1,12 +1,12 @@
+import "./CreateOperation.css"
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
-import "./CreatePost.css"
 import axios from "axios"
 import {useNavigate} from "react-router-dom";
 
-function CreatePost() {
-  const navigate= useNavigate()
+function CreateOperation() {
+  const navigate = useNavigate()
 
   const initialValues = {
     typeOperation: "",
@@ -38,7 +38,7 @@ function CreatePost() {
           <ErrorMessage name="typeOperation" component="span"/>
           <Field as="select"
             autocomplete="off"
-            id="inputCreatePost" 
+            id="inputCreateOperation" 
             name="typeOperation"
             placeholder="Ex. ingreso, egreso..">
               <option value="ingreso">Ingreso</option>
@@ -50,7 +50,7 @@ function CreatePost() {
           <ErrorMessage name="amount" component="span"/>
           <Field type="number"
             autocomplete="off"
-            id="inputCreatePost" 
+            id="inputCreateOperation" 
             name="amount"
             placeholder="Ex. 520.."
           />
@@ -59,7 +59,7 @@ function CreatePost() {
           <ErrorMessage name="concept" component="span"/>
           <Field 
             autocomplete="off"
-            id="inputCreatePost" 
+            id="inputCreateOperation" 
             name="concept"
             placeholder="Ex. zapatillas.."
           />
@@ -68,16 +68,16 @@ function CreatePost() {
           <ErrorMessage name="dateOperation" component="span"/>
           <Field type="date"
             autocomplete="off"
-            id="inputCreatePost" 
+            id="inputCreateOperation" 
             name="dateOperation"
             placeholder="Ex. 17/05/2001.."
           />
 
-          <button type='submit'> Create Post </button>
+          <button type='submit'> Create Operation </button>
         </Form>
       </Formik>
     </div>
   )
 }
 
-export default CreatePost
+export default CreateOperation

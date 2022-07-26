@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: row;
   }
-    .dateOperation{
+    .date{
       display: flex;
       align-items: center;
       justify-content: left;
