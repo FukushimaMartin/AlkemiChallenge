@@ -12,20 +12,17 @@ function App() {
       <Router>
         <div className="navbar">
           <ul>
-            {/* <li> <Link to="/createoperation"> New Operation </Link> </li> */}
             <li> <Link to="/"> Inicio </Link> </li>
             <li> <Link to="/operations"> Operaciones </Link> </li>
           </ul>
         </div>
         <div className='routes'>
-          <div className='routers'>
             <Routes>
               <Route path="/" exact element={ <Home /> } />
               <Route path="/createoperation" exact element={ <CreateOperation /> } />
               <Route path="/operation/:id" exact element={ <Operation /> } />
               <Route path="/operations" exact element={ <Operations /> } />
             </Routes>
-          </div>
         </div>
       </Router>
     </div>

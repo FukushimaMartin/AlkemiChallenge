@@ -9,7 +9,7 @@ function CreateOperation() {
   const navigate = useNavigate()
 
   const initialValues = {
-    typeOperation: "",
+    typeOperation: "ingreso",
     amount: "",
     concept: "",
     dateOperation: "",
@@ -37,10 +37,9 @@ function CreateOperation() {
           <label>Tipo de Operacion: </label>
           <ErrorMessage name="typeOperation" component="span"/>
           <Field as="select"
-            autocomplete="off"
             id="inputCreateOperation" 
             name="typeOperation"
-            placeholder="Ex. ingreso, egreso..">
+            >
               <option value="ingreso">Ingreso</option>
               <option value="egreso">Egreso</option>
           </Field>
@@ -70,7 +69,6 @@ function CreateOperation() {
             autocomplete="off"
             id="inputCreateOperation" 
             name="dateOperation"
-            placeholder="Ex. 17/05/2001.."
           />
 
           <button type='submit'> Create Operation </button>

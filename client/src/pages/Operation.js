@@ -17,24 +17,25 @@ function Operation() {
   }, [])
   
   return (
-    <div className='postOperation'>
-      
-      <div className='typeOperation'>
-        {operationObject.typeOperation === 'ingreso'
-          ? <div className='green'>Ingreso</div>
-          : <div className='red'>Egreso</div>
-        }
-      </div>
-      <div className='conceptContainerOperation'>
-        <label className='conceptLabelOperation'>Concepto: </label>
-        <label className='conceptOperation'>{operationObject.concept}</label>
-        
-      </div>
-      <div className='amountOperation'>Monto: ${operationObject.amount} </div>
-      <div className="dateOperation"> 
-          {fecha.getDay() < 10 ? '0' + fecha.getDay() : fecha.getDay()}/
-          {fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1}/
-          {fecha.getFullYear()}
+    <div className='operationView'>
+      <div className='postOperation'>
+        <div className='typeOperation'>
+          {operationObject.typeOperation === 'ingreso'
+            ? <div className='green'>Ingreso</div>
+            : <div className='red'>Egreso</div>
+          }
+        </div>
+        <div className='conceptContainerOperation'>
+          <label className='conceptLabelOperation'>Concepto: </label>
+          <label className='conceptOperation'>{operationObject.concept}</label>
+          
+        </div>
+        <div className='amountOperation'>Monto: ${operationObject.amount} </div>
+        <div className="dateOperation"> 
+            {fecha.getDay() < 10 ? '0' + fecha.getDay() : fecha.getDay()}/
+            {fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1}/
+            {fecha.getFullYear()}
+        </div>
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import { AiFillPlusCircle } from "react-icons/ai"
+import FlatList from 'flatlist-react';
 import "./Home.css";
 
 function Home() {
@@ -13,10 +14,34 @@ function Home() {
       setListOfOperations(response.data)
     })
   }, [])
+  
   var total = 0
+
+  const renderOperation = (value, index) => {
+    const fecha = new Date(value.dateOperation)
+    return(
+      <div 
+        key={index} 
+        className="operationHome" 
+        onClick={ () => {navigate(`/operation/${value.id}`)}}
+      >
+        <div className="dateHome"> 
+          {fecha.getDay() < 10 ? '0' + fecha.getDay() : fecha.getDay()}/
+          {fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1}/
+          {fecha.getFullYear()}
+        </div>
+        <div className="conceptHome"> {value.concept} </div>
+        <div className="amountContainerHome">
+          { value.typeOperation === 'egreso' 
+            ? <div className='amountHome red'> {value.amount} </div> 
+            : <div className='amountHome green'> {value.amount} </div> }
+        </div>
+      </div>
+    )
+  }
   
   return (
-    <div className="App">
+    <div className="homeContainer">
       {listOfOperations.forEach((value, index) => {
         value.typeOperation === 'ingreso' 
           ? total += value.amount 
@@ -25,7 +50,6 @@ function Home() {
       <div className='total'>
         <h1> Balance Total: {total} </h1>
       </div>
-
       <div className='newOperationContainer'> 
         <AiFillPlusCircle 
           color="#00a680" 
@@ -33,30 +57,14 @@ function Home() {
           onClick={ () => {navigate(`/createoperation`)} }
         /> 
       </div>
-      
-      {listOfOperations.map((value, index) => {
-        const fecha = new Date(value.dateOperation)
-        
-        return (
-          <div 
-            key={index} 
-            className="operation" 
-            onClick={ () => {navigate(`/operation/${value.id}`)}}
-          >
-            <div className="date"> 
-              {fecha.getDay() < 10 ? '0' + fecha.getDay() : fecha.getDay()}/
-              {fecha.getMonth() + 1 < 10 ? '0' + (fecha.getMonth() + 1) : fecha.getMonth() + 1}/
-              {fecha.getFullYear()}
-            </div>
-            <div className="concept"> {value.concept} </div>
-            <div className="amountContainer">
-              { value.typeOperation === 'egreso' 
-                ? <div className='amount red'> {value.amount} </div> 
-                : <div className='amount green'> {value.amount} </div> }
-            </div>
-          </div>
-        )
-      })}
+      <div>
+        <FlatList 
+          list={listOfOperations}
+          renderItem={renderOperation}
+          limit={10}
+          reversed
+        /> 
+      </div>
     </div>
   )
 }

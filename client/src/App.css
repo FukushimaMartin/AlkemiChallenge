@@ -1,27 +1,26 @@
 .App {
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
   align-items: center;
-  width: 100%;
 }
 
 .navbar{
-  width: 80%;
+  width: 50%;
   display: flex;
   justify-content: center;
+  margin: -5px;
 }
   .navbar ul{
     display: flex;
-    width: 50%;
+    width: 100%;
 
     list-style-type: none;
-    margin: 0;
-    padding: 0 20px 0 20px;
+    margin-top: -3px;
+    padding: 0px 20px;
     overflow: hidden;
-    background-color: #333;
+    background-color: #078a6b;
+    border-radius: 6px;
   }
   .navbar li {
     float: left;
@@ -34,15 +33,12 @@
     text-decoration: none;
   }
   .navbar li a:hover {
-    background-color: #111;
+    background-color: #299e83;
   }
 
   .routes {
-    width: 80%;
+    width: 50%;
     display: flex;
     justify-content: center;
+    margin-top: -12px;
   }
-    .routers{
-      display: flex;
-      width: 50%;
-    }
