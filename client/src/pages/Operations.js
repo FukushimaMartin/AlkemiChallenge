@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-import { AiFillPlusCircle } from "react-icons/ai"
-import "./Home.css";
+import "./Operations.css";
 
-function Home() {
+export default function Operations() {
   const [listOfOperations, setListOfOperations] = useState([])
   const navigate = useNavigate()
 
@@ -13,27 +12,9 @@ function Home() {
       setListOfOperations(response.data)
     })
   }, [])
-  var total = 0
-  
-  return (
-    <div className="App">
-      {listOfOperations.forEach((value, index) => {
-        value.typeOperation === 'ingreso' 
-          ? total += value.amount 
-          : total -= value.amount
-      })}
-      <div className='total'>
-        <h1> Balance Total: {total} </h1>
-      </div>
 
-      <div className='newOperationContainer'> 
-        <AiFillPlusCircle 
-          color="#00a680" 
-          className='newOperationIcon' 
-          onClick={ () => {navigate(`/createoperation`)} }
-        /> 
-      </div>
-      
+  return (
+    <div className='app'>
       {listOfOperations.map((value, index) => {
         const fecha = new Date(value.dateOperation)
         
@@ -60,5 +41,3 @@ function Home() {
     </div>
   )
 }
-
-export default Home
