@@ -46,7 +46,7 @@
     margin: 15px;
   }
     .conceptLabelOperation{
-      align-self: flex-start;
+      align-self: center;
       justify-content: flex-start;
 
       width: 20%;
@@ -56,7 +56,7 @@
       justify-content: left;
       align-items: flex-start;
       
-      background-color: aliceblue;
+      
       margin-left: 5px;
       padding-left: 5px;
 

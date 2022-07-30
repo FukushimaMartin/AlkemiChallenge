@@ -20,4 +20,23 @@ router.post("/", async (req, res) => {
   res.json(operation)
 })
 
+router.put("/changeOperation", async (req, res) => {
+  const {amount, concept, id} = req.body
+  await Operations.update({
+    amount: amount, 
+    concept: concept,
+  }, { where: {id: id} })
+  res.json("SUCCESS")
+})
+
+router.delete("/:operationId", async (req, res) => {
+  const operationId = req.params.operationId
+  await Operations.destroy({
+    where: {
+      id: operationId,
+    },
+  })
+  res.json("DELETED SUCCESS")
+})
+
 module.exports = router

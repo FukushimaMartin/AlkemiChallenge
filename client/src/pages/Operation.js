@@ -8,13 +8,14 @@ function Operation() {
   let {id} = useParams()
   const [operationObject, setOperationObject] = useState({})
 
-  const fecha = new Date(operationObject.dateOperation)
-
+  
   useEffect(() => {
     axios.get(`http://localhost:3001/operations/byId/${id}`).then((response) => {
       setOperationObject(response.data)
     })
   }, [])
+  
+  const fecha = new Date(operationObject.dateOperation)
   
   return (
     <div className='operationView'>

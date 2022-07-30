@@ -71,7 +71,7 @@ function CreateOperation() {
             name="dateOperation"
           />
 
-          <button type='submit'> Create Operation </button>
+          <button type='submit'> Crear Operacion </button>
         </Form>
       </Formik>
     </div>

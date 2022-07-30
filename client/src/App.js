@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import CreateOperation from "./pages/CreateOperation"
 import Operation from "./pages/Operation"
 import Operations from "./pages/Operations"
+import ChangeOperation from "./pages/ChangeOperation"
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
               <Route path="/createoperation" exact element={ <CreateOperation /> } />
               <Route path="/operation/:id" exact element={ <Operation /> } />
               <Route path="/operations" exact element={ <Operations /> } />
+              <Route path="/changeoperation/:id" exact element={ <ChangeOperation /> } />
             </Routes>
         </div>
       </Router>
